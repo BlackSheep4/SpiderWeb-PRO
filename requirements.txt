@@ -1,0 +1,9 @@
+python-whois
+ip2geotools
+dnspython
+wget
+requests
+bs4
+python-Wappalyzer
+phonenumbers
+colorama
