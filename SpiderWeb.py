@@ -76,17 +76,14 @@ def main():
                 ttl= int(ttl)
 
                 if ttl >= 0 and ttl <= 64:
-                    print(Fore.RED + "[" + Fore.GREEN + "+" + Fore.RED + "] " + Fore.WHITE + "Server Operative System: " + Fore.GREEN + "LINUX")
-                    print(Style.RESET_ALL)
+                    o_system = "LINUX"
                 elif ttl >= 65 and ttl <= 128:
-                    print(Fore.RED + "[" + Fore.GREEN + "+" + Fore.RED + "] " + Fore.WHITE + "Server Operative System: " + Fore.GREEN + "WINDOWS")
-                    print(Style.RESET_ALL)
+                    o_system = "WINDOWS"
                 else:
-                    print(Fore.RED + "[" + Fore.GREEN + "+" + Fore.RED + "] " + Fore.WHITE + "Server Operative System:" + Fore.GREEN + "UNKOWN")
-                    print(Style.RESET_ALL)
-                
-                input('\n' + "Press any key to continue...")
-                os.system('clear')
+                    o_system = "UNKNOWN"
+                print(Fore.RED + "[" + Fore.GREEN + "+" + Fore.RED + "] " + Fore.WHITE + "Server Operative System:" + Fore.GREEN + o_system)
+                print(Style.RESET_ALL)
+                pressAny()
             
             except (AttributeError):
                 print('\n')
