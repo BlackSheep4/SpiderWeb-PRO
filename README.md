@@ -9,3 +9,13 @@ First install requirements:
 One time you have installed the requirements, run the script with Python3:
 
 ``python3 SpiderWeb.py``
+
+## To Do
+
+```
+THINGS TO ADD
+
+- CMS Scanner
+- Subdomain Scanner
+- Fuzzing Tool
+```
