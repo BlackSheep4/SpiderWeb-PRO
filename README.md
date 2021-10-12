@@ -10,7 +10,7 @@ One time you have installed the requirements, run the script with Python3:
 
 ``python3 SpiderWeb.py``
 
-## To Do
+## To Do (SpiderWeb 2.0.0)
 
 ```
 THINGS TO ADD
