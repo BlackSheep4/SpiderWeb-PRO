@@ -15,7 +15,8 @@ pipeline {
             }
             steps {
                 script {
-                    deploy_script = load 'script/runner.groovy'
+                    sh 'ls -la'
+                    deploy_script = load 'openphish-dev/script/runner.groovy'
                     sh deploy_script.ssh_scr(params, env)
                 }
             }
