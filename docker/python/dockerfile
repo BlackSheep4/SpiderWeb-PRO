@@ -1,4 +1,4 @@
-FROM ubuntu:latest
+FROM python:latest
 RUN apt-get update -y && \
     apt-get upgrade -y && \
     apt-get dist-upgrade -y && \
