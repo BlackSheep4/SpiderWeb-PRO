@@ -1,0 +1,14 @@
+python-whois
+ip2geotools
+dnspython
+wget
+requests
+bs4
+python-Wappalyzer
+phonenumbers
+colorama
+python-nmap
+sockets
+sys
+io
+wafw00f==2.2.0
