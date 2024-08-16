@@ -9,7 +9,7 @@ pipeline {
         stage('Build Image') {
             agent {
                 dockerfile {
-                    filename 'docker/python/dockerfile'
+                    filename 'dockerfile'
                     reuseNode true
                 }
             }
