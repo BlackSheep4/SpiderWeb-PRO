@@ -6,11 +6,7 @@ from config.libraries import io
 from config.libraries import subprocess
 from config.libraries import re
 from config.libraries import Fore, Style
-from config.libraries import requests
 from modules.waf_detection import firewall_detection
-
-import pyshark
-import os
 
 class AdvancedStealthOSDetection:
 
