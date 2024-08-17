@@ -4,20 +4,14 @@ on:
   push:
     branches: [dev]
   workflow_dispatch:
-    inputs:
-      option:
-        description: "Choose option to run"
-        required: true
-        default: "option1"
-        type: choice
-        options:
-          - option1
-          - option2
-          - option3
 
 jobs:
   run-software:
     runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        option: ["option1", "option2", "option3"] # Define todas las opciones aquí
 
     steps:
       - name: Checkout code
@@ -30,4 +24,4 @@ jobs:
 
       - name: Run Python Script
         run: |
-          python test.py ${{ github.event.inputs.option }}
+          python test.py ${{ matrix.option }}
