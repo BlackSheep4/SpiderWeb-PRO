@@ -1,10 +1,11 @@
-name: Run Python Software
+name: SpiderWeb CI/CD
 
 on:
-  workflow_dispatch:
+  push:
+    branches: [dev]
     inputs:
       option:
-        description: "Choose an option to run"
+        description: "Choose option to run"
         required: true
         default: "option1"
         type: choice
@@ -12,7 +13,6 @@ on:
           - option1
           - option2
           - option3
-
 jobs:
   run-software:
     runs-on: ubuntu-latest
