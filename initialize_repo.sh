@@ -9,7 +9,7 @@ GITHUB_USER="BlackSheep4"
 REMOTE_URL="https://github.com/$GITHUB_USER/$REPO_NAME.git"
 
 # Nombre de la rama que deseas usar
-BRANCH_NAME="main"  # Cambia a "dev" si necesitas
+BRANCH_NAME="dev"  # Cambia a "dev" si necesitas
 
 # Función para inicializar el repositorio y hacer el push inicial
 initialize_and_push() {
