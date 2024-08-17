@@ -8,6 +8,9 @@ REPO_NAME="SpiderWeb-PRO"
 GITHUB_USER="BlackSheep4"
 REMOTE_URL="https://github.com/$GITHUB_USER/$REPO_NAME.git"
 
+# Nombre de la rama que deseas usar
+BRANCH_NAME="main"  # Cambia a "dev" si necesitas
+
 # Función para inicializar el repositorio y hacer el push inicial
 initialize_and_push() {
   cd $PROJECT_PATH || exit
@@ -21,14 +24,22 @@ initialize_and_push() {
   # Hacer el commit inicial
   git commit -m "Initial Commitment"
 
-  # Añadir el repositorio remoto
-  git remote add origin $REMOTE_URL
+  # Verificar si el remoto 'origin' ya existe
+  if git remote | grep origin > /dev/null; then
+    echo "Remoto 'origin' ya existe, no se añadirá de nuevo."
+  else
+    # Añadir el repositorio remoto
+    git remote add origin $REMOTE_URL
+  fi
 
-  # Hacer pull de la rama remota para evitar conflictos
-  git pull origin dev --allow-unrelated-histories
+  # Crear y cambiar a la rama correcta
+  git checkout -B $BRANCH_NAME
+
+  # Hacer pull de la rama remota para evitar conflictos (si existe)
+  git pull origin $BRANCH_NAME --allow-unrelated-histories || echo "La rama remota $BRANCH_NAME no existe. Se omite el pull."
 
   # Hacer push al repositorio remoto
-  git push -u origin dev
+  git push -u origin $BRANCH_NAME
 }
 
 # Llamar a la función
