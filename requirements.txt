@@ -9,6 +9,5 @@ phonenumbers
 colorama
 python-nmap
 sockets
-sys
 io
 wafw00f==2.2.0
