@@ -26,4 +26,4 @@ jobs:
 
       - name: Run Docker Container with Option
         run: |
-          docker run spiderweb-test ${{ matrix.option }}
+          docker run spiderweb-test python test.py ${{ matrix.option }}
