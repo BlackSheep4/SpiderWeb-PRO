@@ -9,11 +9,9 @@ GITHUB = "https://github.com/BlackSheep4"
 # Vars
 version = 2.0
 
-
 def print_banner():
-
-    print(Fore.RED + fr"""\n\n\t\t\tAIO Tool For """ + Fore.GREEN + fr"""Information Gathering """ + Fore.RED + fr"""And """ + Fore.GREEN + fr"""Reconnaissance Scanner\n\t\t\t\t\t\t\t""" + Fore.RED + fr"""[$] Current Version: """ +  Fore.GREEN + fr"""{version}""")
-    print(Fore.RED + fr"""
+    print(Fore.RED + f"""\n\n\t\t\tAIO Tool For """ + Fore.GREEN + f"""Information Gathering """ + Fore.RED + f"""And """ + Fore.GREEN + f"""Reconnaissance Scanner\n\t\t\t\t\t\t\t""" + Fore.RED + f"""[$] Current Version: """ +  Fore.GREEN + f"""{version}""")
+    print(Fore.RED + f"""
                                                                                                                  
   ______             __        __                      __       __            __                                        
  /      \           |  \      |  \                    |  \  _  |  \          |  \      
@@ -29,6 +27,6 @@ def print_banner():
            \$$                                                                                                                                                                                                                            
     """)
 
-    print(fr"""\n\t\t\t\t""" + Fore.GREEN + fr"""\t\t{C} Coded By - """ + Fore.RED + fr"""{MAINTAINER}""" + Fore.GREEN + fr"""\n\t\t\t{I} Find me in github: """ + Fore.RED + """{GITHUB}\n""" + Style.RESET_ALL)
+    print(f"""\n\t\t\t\t""" + Fore.GREEN + f"""\t\tCoded By - """ + Fore.RED + f"""{MAINTAINER}""" + Fore.GREEN + f"""\n\t\t\tFind me on GitHub: """ + Fore.RED + f"""{GITHUB}\n""" + Style.RESET_ALL)
 
 print_banner()
