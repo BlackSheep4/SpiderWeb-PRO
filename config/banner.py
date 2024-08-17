@@ -27,6 +27,6 @@ def print_banner():
            \$$                                                                                                                                                                                                                            
     """)
 
-    print(f"""\n\t\t\t\t""" + Fore.GREEN + f"""\t\tCoded By - """ + Fore.RED + f"""{MAINTAINER}""" + Fore.GREEN + f"""\n\t\t\t\t\tFind me on GitHub: """ + Fore.RED + f"""{GITHUB}\n""" + Style.RESET_ALL)
+    print(f"""\n\t\t\t\t""" + Fore.GREEN + f"""\tCoded By - """ + Fore.RED + f"""{MAINTAINER}""" + Fore.GREEN + f"""\n\tFind me on GitHub: """ + Fore.RED + f"""{GITHUB}\n""" + Style.RESET_ALL)
 
 print_banner()
