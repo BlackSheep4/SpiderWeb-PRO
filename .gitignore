@@ -1,2 +1,3 @@
 .github/workflows/test.yml
 environment-variables.env
+initialize_repo.sh
