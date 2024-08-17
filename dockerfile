@@ -14,5 +14,3 @@ RUN apt-get update && apt-get install -y \
 # Instala las dependencias de Python
 RUN pip install --no-cache-dir --upgrade pip && \
     pip install -r requirements.txt
-
-CMD ["python", "main.py"]
