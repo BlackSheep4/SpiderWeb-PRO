@@ -10,3 +10,4 @@ colorama==0.4.6
 python-nmap==0.7.1
 sockets==1.0.0
 wafw00f==2.2.0
+pwntools==4.13.0
