@@ -8,8 +8,9 @@ WORKDIR /app
 COPY . /app
 
 # Instala las dependencias desde requirements.txt si existe
-RUN pip install --no-cache-dir --upgrade pip
-RUN if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+RUN pip install --no-cache-dir --upgrade pip && \
+    pip install -r requirements.txt
+
 
 # Define el comando por defecto para ejecutar el script
 CMD ["python3", "main.py"]
