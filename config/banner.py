@@ -2,12 +2,18 @@
 
 from .libraries import Fore, Style, init
 
-def print_banner():
-    
-    version = 2.0
+# Const
+MAINTAINER = "BlackSheep4"
+GITHUB = "https://github.com/BlackSheep4"
 
-    print(Fore.RED + "\n\n\t\t\tAIO Tool For " + Fore.GREEN + "Information Gathering " + Fore.RED + "And " + Fore.GREEN + f"Automatic Vulnerability Scanner\n\t\t\t\t\t\t\t" + Fore.RED + "[$] Current Version: " +  Fore.GREEN + f"{version}")
-    print(Fore.RED + """
+# Vars
+version = 2.0
+
+
+def print_banner():
+
+    print(Fore.RED + fr"""\n\n\t\t\tAIO Tool For """ + Fore.GREEN + fr"""Information Gathering """ + Fore.RED + fr"""And """ + Fore.GREEN + fr"""Reconnaissance Scanner\n\t\t\t\t\t\t\t""" + Fore.RED + fr"""[$] Current Version: """ +  Fore.GREEN + fr"""{version}""")
+    print(Fore.RED + fr"""
                                                                                                                  
   ______             __        __                      __       __            __                                        
  /      \           |  \      |  \                    |  \  _  |  \          |  \      
@@ -23,5 +29,6 @@ def print_banner():
            \$$                                                                                                                                                                                                                            
     """)
 
-    print("\n\t\t\t\t" + Fore.GREEN + "\t\t{C} Coded By - " + Fore.RED + "BlackSheep4" + Fore.GREEN + "\n\t\t\t{I} Find me in github: " + Fore.RED + "https://github.com/BlackSheep4\n" + Style.RESET_ALL)
+    print(fr"""\n\t\t\t\t""" + Fore.GREEN + fr"""\t\t{C} Coded By - """ + Fore.RED + fr"""{MAINTAINER}""" + Fore.GREEN + fr"""\n\t\t\t{I} Find me in github: """ + Fore.RED + """{GITHUB}\n""" + Style.RESET_ALL)
+
 print_banner()
