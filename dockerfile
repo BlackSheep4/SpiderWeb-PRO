@@ -15,4 +15,4 @@ RUN apt-get update && apt-get install -y \
 RUN pip install --no-cache-dir --upgrade pip && \
     pip install -r requirements.txt
 
-CMD ["python", "test.py"]
+CMD ["python", "main.py"]
