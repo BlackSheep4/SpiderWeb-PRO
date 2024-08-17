@@ -1,0 +1,36 @@
+name: Run Python Software
+
+on:
+  workflow_dispatch:
+    inputs:
+      option:
+        description: "Choose an option to run"
+        required: true
+        default: "option1"
+        type: choice
+        options:
+          - option1
+          - option2
+          - option3
+
+jobs:
+  run-software:
+    runs-on: ubuntu-latest # Esta es la clave correcta, asegúrate de que esté bien escrita
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.x"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+
+      - name: Run Python Script
+        run: |
+          python main.py ${{ github.event.inputs.option }}
