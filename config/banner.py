@@ -1,13 +1,13 @@
 #!/bin/python3
 
 from .libraries import Fore, Style, init
+import _curses  # Needed for terminal errors
 
 def print_banner():
-    
     version = 2.0
 
     print(Fore.RED + "\n\n\t\t\tAIO Tool For " + Fore.GREEN + "Information Gathering " + Fore.RED + "And " + Fore.GREEN + f"Automatic Vulnerability Scanner\n\t\t\t\t\t\t\t" + Fore.RED + "[$] Current Version: " +  Fore.GREEN + f"{version}")
-    print(Fore.RED + """
+    print(Fore.RED + r"""
                                                                                                                  
   ______             __        __                      __       __            __                                        
  /      \           |  \      |  \                    |  \  _  |  \          |  \      
@@ -23,5 +23,21 @@ def print_banner():
            \$$                                                                                                                                                                                                                            
     """)
 
-    print("\n\t\t\t\t" + Fore.GREEN + "\t\t{C} Coded By - " + Fore.RED + "BlackSheep4" + Fore.GREEN + "\n\t\t\t{I} Find me in github: " + Fore.RED + "https://github.com/BlackSheep4\n" + Style.RESET_ALL)
+    print("\n\t\t\t\t" + Fore.GREEN + "\t\t{C} Coded By - " + Fore.RED + "BlackSheep4" + Fore.GREEN + "\n\t\t\t{I} Find me on github: " + Fore.RED + "https://github.com/BlackSheep4\n" + Style.RESET_ALL)
+
+# Initialize terminal features (try to use them if available)
+try:
+    init()
+except _curses.error:
+    print("Terminal features are unavailable. Continuing without them.")
+
+# Print the banner
 print_banner()
+
+# Define the main function
+def main_function():
+    # Placeholder for the main functionality
+    print("Starting main function...")
+
+# Call the main function
+main_function()
