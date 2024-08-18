@@ -30,6 +30,7 @@ def print_banner():
 
     print(f"""\n\t\t\t\t""" + Fore.GREEN + f"""\tCoded By - """ + Fore.RED + f"""{MAINTAINER}""" + Fore.GREEN + f"""\n\tFind me on GitHub: """ + Fore.RED + f"""{GITHUB}\n""" + Style.RESET_ALL)
 
+# Initialize terminal features (try to use them if available)
 try:
     init()
 except _curses.error:
@@ -39,9 +40,15 @@ print_banner()
 
 def main_function():
     try:
+        # Try to get input; provide a fallback default website if EOFError occurs
         target = input("\n[#] Enter the website to scan (e.g: example.com) >> ")
     except EOFError:
         print("No input received. Exiting...")
-        exit(1)
+        target = "example.com"  # Default target
+        print(f"\nNo input provided. Using default target: {target}")
 
+    # Continue with the logic for scanning the website
+    print(f"\nScanning website: {target}")
+
+# Call the main function
 main_function()
