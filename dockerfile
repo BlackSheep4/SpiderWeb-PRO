@@ -7,9 +7,9 @@ WORKDIR /app
 # Copy only the necessary files to install dependencies first
 COPY requirements.txt .
 
-# Install necessary system dependencies, including ncurses
+# Install necessary system dependencies, including iputils-ping and ncurses
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    apt-get install iputils-ping \
+    iputils-ping \
     build-essential \
     libssl-dev \
     libffi-dev \
