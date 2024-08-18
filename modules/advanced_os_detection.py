@@ -35,6 +35,7 @@ class AdvancedStealthOSDetection:
 
             if error:
                 print(Fore.RED + f"[*] Error: Cannot resolve host ({self.target})." + Style.RESET_ALL)
+                print(error)
                 return
             else:
                 output = ping.communicate()[0]
