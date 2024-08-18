@@ -1,25 +1,29 @@
-# Usa una imagen base oficial de Python
+# Use a base Python image
 FROM python:3.12-slim AS base
 
-# Establece el directorio de trabajo dentro del contenedor
+# Set the working directory inside the container
 WORKDIR /app
 
-# Copia solo los archivos necesarios para instalar dependencias primero
+# Copy only the necessary files to install dependencies first
 COPY requirements.txt .
 
-# Instala las dependencias del sistema necesarias
+# Install necessary system dependencies, including ncurses
 RUN apt-get update && apt-get install -y --no-install-recommends \
     build-essential \
     libssl-dev \
     libffi-dev \
+    ncurses-term \
     && rm -rf /var/lib/apt/lists/*
 
-# Instala las dependencias de Python
+# Install Python dependencies
 RUN pip install --no-cache-dir --upgrade pip && \
     pip install --no-cache-dir -r requirements.txt
 
-# Copia el resto de los archivos del proyecto
+# Copy the rest of the project files
 COPY . .
 
-# Define el comando por defecto para ejecutar el script
-# CMD ["python", "test.py"]
+# Set the TERM environment variable to xterm (helps in headless environments)
+ENV TERM=xterm
+
+# Default command to run your script
+CMD ["python", "test.py"]
