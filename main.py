@@ -1,13 +1,13 @@
 #!/bin/python3
 
 # Importations
+import sys
 from config import banner
 from config.libraries import subprocess, Fore, Style, init
 from modules import library_checking, vulnerability_updater
 from modules.advanced_os_detection import AdvancedStealthOSDetection
 from modules.library_checking import LibraryChecker
 from modules.waf_detection import firewall_detection
-
 
 def main_function():
     # Show banner
@@ -20,9 +20,12 @@ def main_function():
     # Check if program is running with sudo privileges
     library_checker.check_sudo_privileges()
 
-    # Target Input
-    global target
-    target = input("\n[#] Enter the website to scan (e.g: example.com) >> ")
+    # Check if a target was provided as a command-line argument
+    if len(sys.argv) < 2:
+        print("Usage: python main.py <target>")
+        sys.exit(1)
+
+    target = sys.argv[1]
 
     if target == "fix":
         library_checker.fix_required_libraries()
@@ -41,7 +44,6 @@ def main_function():
         print(Fore.RED + "\n\t[" + Fore.GREEN + "04" + Fore.RED + "] " + Fore.WHITE + "ASN Discovery")
         print(Fore.RED + "\n\t[" + Fore.GREEN + "04" + Fore.RED + "] " + Fore.WHITE + "URL Endpoint Discovery Crawler")
 
-
         print(Fore.RED + "\n\t[" + Fore.GREEN + "SCANNERS" + Fore.RED + "]")
         print(Fore.RED + "\n\t[" + Fore.GREEN + "05" + Fore.RED + "] " + Fore.WHITE + "Phone Scanner")
         print(Fore.RED + "\n\t[" + Fore.GREEN + "05" + Fore.RED + "] " + Fore.WHITE + "Email Scanner")
@@ -49,25 +51,22 @@ def main_function():
         print(Fore.RED + "\n\t[" + Fore.GREEN + "08" + Fore.RED + "] " + Fore.WHITE + "Port Scanner")
         print(Fore.RED + "\n\t[" + Fore.GREEN + "08" + Fore.RED + "] " + Fore.WHITE + "Subdomain Scanner")
 
-
         print(Fore.RED + "\n\t[" + Fore.GREEN + "FUZZERS" + Fore.RED + "]")
         print(Fore.RED + "\n\t[" + Fore.GREEN + "05" + Fore.RED + "] " + Fore.WHITE + "Subdomain Fuzzer")
         print(Fore.RED + "\n\t[" + Fore.GREEN + "05" + Fore.RED + "] " + Fore.WHITE + "Web Path Fuzzer")
 
         choice = input("\nSelect an option >> ")
 
-        if choice == '1' or '01':
+        if choice == '1' or choice == '01':
             target = AdvancedStealthOSDetection(target)
             target.passive_ttl_method()
             target.active_nmap_method()
             #target.banner_grabbing()
             target.pypof_detection()
-        elif choice == '2' or '02':
+        elif choice == '2' or choice == '02':
             firewall_detection
         else:
             pass
-        
-    
 
 if __name__ == "__main__":
     main_function()
