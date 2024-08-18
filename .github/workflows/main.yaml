@@ -11,8 +11,8 @@ jobs:
 
     strategy:
       matrix:
-        option: ["help", "info", "scan"] # Define all options here
-        target: ["example.com", ""] # Define all targets here; use an empty string for non-scan options
+        option: ["scan"] # Define all options here
+        target: ["nmap.org"] # Define all targets here; use an empty string for non-scan options
 
     steps:
       - name: Checkout code

@@ -5,6 +5,7 @@ from config.libraries import sys
 from config.libraries import io
 from config.libraries import subprocess
 from config.libraries import re
+from config.libraries import nmap
 from config.libraries import Fore, Style
 from modules.waf_detection import firewall_detection
 
