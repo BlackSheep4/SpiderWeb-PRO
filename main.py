@@ -28,7 +28,7 @@ def main_function():
 
     if sys.argv[1] == "help":
         #library_checker.fix_required_libraries()
-        helper_panel.help_panel()
+        help_panel.help_panel()
     else:
         pass
         #print(Fore.RED + "\n\t[" + Fore.GREEN + "BASIC RECOGNITION" + Fore.RED + "]")
