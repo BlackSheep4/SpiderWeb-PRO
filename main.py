@@ -21,9 +21,9 @@ def main_function(args):
     elif args.option == "scan":
         os_detection = AdvancedStealthOSDetection(args.target)
         os_detection.passive_ttl_method()
-        os_detection.active_nmap_method()
-        os_detection.banner_grabbing()
-        os_detection.pypof_detection()
+        #os_detection.active_nmap_method()
+        #os_detection.banner_grabbing()
+        #os_detection.pypof_detection()
 
     else:
         print(f"Specified command '{args.option}' does not exist.")
