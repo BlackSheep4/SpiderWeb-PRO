@@ -32,5 +32,3 @@ try:
     init()
 except _curses.error:
     print("Terminal features are unavailable. Continuing without them.")
-
-print_banner()

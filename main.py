@@ -1,7 +1,7 @@
 #!/bin/python3
 
 import argparse
-from config import banner
+from config.banner import print_banner  # Importar la función correctamente
 from config.libraries import subprocess, Fore, Style, init
 from modules.advanced_os_detection import AdvancedStealthOSDetection
 from modules.waf_detection import firewall_detection
@@ -10,7 +10,7 @@ from modules.about_me import aboutme_info
 
 def main_function(args):
     # Mostrar el banner
-    banner()
+    print_banner()
 
     if args.option == "help":
         help_panel()
@@ -29,7 +29,6 @@ def main_function(args):
         print(f"Specified command '{args.option}' does not exist.")
 
 if __name__ == "__main__":
-
     parser = argparse.ArgumentParser(description="AIO Tool For Information Gathering And Automatic Vulnerability Scanner")
     parser.add_argument('option', choices=['help', 'info', 'scan'], help="Command to execute: 'help', 'info', or 'scan'.")
     parser.add_argument('target', nargs='?', help="Target for the scan (required for 'scan' command).")
