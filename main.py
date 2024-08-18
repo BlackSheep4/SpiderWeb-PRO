@@ -26,10 +26,7 @@ def main_function():
     #    print("Use: python main.py <target> <choice>")
     #    sys.exit(1)
 
-    target = sys.argv[1]
-    modules = sys.argv[2]
-
-    if target == "help":
+    if sys.argv[1] == "help":
         #library_checker.fix_required_libraries()
         helper_panel.help_panel()
     else:
