@@ -6,6 +6,6 @@ import sys
 import io
 import re
 import requests
-import python-nmap
+#import nmap
 from colorama import Fore, Style, init
 from pwn import log

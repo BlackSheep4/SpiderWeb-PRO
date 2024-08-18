@@ -5,9 +5,11 @@ from config.libraries import sys
 from config.libraries import io
 from config.libraries import subprocess
 from config.libraries import re
-from config.libraries import nmap
+#from config.libraries import nmap
 from config.libraries import Fore, Style
 from modules.waf_detection import firewall_detection
+
+import nmap
 
 class AdvancedStealthOSDetection:
 
@@ -22,6 +24,7 @@ class AdvancedStealthOSDetection:
             print(Fore.RED + f"[*] Impossible to get the IP Address for the given domain" + Style.RESET_ALL)
     
     def passive_ttl_method(self):
+
         # Passive Method 1 - TTL
         print (Fore.YELLOW + "[!] Identifying Operative System based on the TTL..." + Style.RESET_ALL)
         os_list = ['Linux / FreeBSD', 'Windows', 'Solaris/AIX']
