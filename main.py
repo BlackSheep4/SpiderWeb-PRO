@@ -1,37 +1,36 @@
 #!/bin/python3
 
-# Importations
+# Importaciones
 import sys
 from config import banner
 from config.libraries import subprocess, Fore, Style, init
-from modules import library_checking, vulnerability_updater
+#from modules import library_checking, vulnerability_updater
 from modules.advanced_os_detection import AdvancedStealthOSDetection
-from modules.library_checking import LibraryChecker
+#from modules.library_checking import LibraryChecker
 from modules.waf_detection import firewall_detection
+from modules.helper_panel import help_panel
 
 def main_function():
-    # Show banner
+    # Mostrar banner
     banner
 
-    # Create instance class
-    library_checker = LibraryChecker()
-    # Check for required library modules
-    library_checker.check_required_libraries_installed()
-    # Check if program is running with sudo privileges
-    library_checker.check_sudo_privileges()
+    # Crear instancia de la clase
+    #library_checker = LibraryChecker()
+    # Verificar que las bibliotecas necesarias estén instaladas
+    #library_checker.check_required_libraries_installed()
+    # Verificar si el programa se está ejecutando con privilegios de sudo
+    #library_checker.check_sudo_privileges()
 
-    # Check if a target was provided as a command-line argument
-    if len(sys.argv) < 2:
-        print("Usage: python main.py <target>")
+    # Verificar si se proporcionaron suficientes argumentos de línea de comandos
+    if len(sys.argv) < 3:
+        print("Use: python main.py <target> <choice>")
         sys.exit(1)
 
     target = sys.argv[1]
+    choice = sys.argv[2]
 
-    if target == "fix":
-        library_checker.fix_required_libraries()
-    elif target == "update":
-        vulnerability_updater.vuln_updater()
-    elif target == "help":
+    if target == "help":
+        #library_checker.fix_required_libraries()
         helper_panel.help_panel()
     else:
         print(Fore.RED + "\n\t[" + Fore.GREEN + "BASIC RECOGNITION" + Fore.RED + "]")
@@ -55,18 +54,17 @@ def main_function():
         print(Fore.RED + "\n\t[" + Fore.GREEN + "05" + Fore.RED + "] " + Fore.WHITE + "Subdomain Fuzzer")
         print(Fore.RED + "\n\t[" + Fore.GREEN + "05" + Fore.RED + "] " + Fore.WHITE + "Web Path Fuzzer")
 
-        choice = input("\nSelect an option >> ")
-
         if choice == '1' or choice == '01':
-            target = AdvancedStealthOSDetection(target)
-            target.passive_ttl_method()
-            target.active_nmap_method()
-            #target.banner_grabbing()
-            target.pypof_detection()
+            detection = AdvancedStealthOSDetection(target)
+            detection.passive_ttl_method()
+            detection.active_nmap_method()
+            # detection.banner_grabbing()
+            detection.pypof_detection()
         elif choice == '2' or choice == '02':
-            firewall_detection
+            firewall_detection.detect(target)
         else:
-            pass
+            print(f"Elección no válida: {choice}")
+            sys.exit(1)
 
 if __name__ == "__main__":
     main_function()

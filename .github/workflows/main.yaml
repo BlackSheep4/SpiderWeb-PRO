@@ -11,7 +11,7 @@ jobs:
 
     strategy:
       matrix:
-        option: ["nmap.org"] # Define all options here
+        option: ["help"] # Define all options here
 
     steps:
       - name: Checkout code
