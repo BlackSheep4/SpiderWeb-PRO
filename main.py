@@ -22,49 +22,50 @@ def main_function():
     #library_checker.check_sudo_privileges()
 
     # Verificar si se proporcionaron suficientes argumentos de línea de comandos
-    if len(sys.argv) < 3:
-        print("Use: python main.py <target> <choice>")
-        sys.exit(1)
+    #if len(sys.argv) < 3:
+    #    print("Use: python main.py <target> <choice>")
+    #    sys.exit(1)
 
     target = sys.argv[1]
-    choice = sys.argv[2]
+    modules = sys.argv[2]
 
     if target == "help":
         #library_checker.fix_required_libraries()
         helper_panel.help_panel()
     else:
-        print(Fore.RED + "\n\t[" + Fore.GREEN + "BASIC RECOGNITION" + Fore.RED + "]")
-        print(Fore.RED + "\n\t[" + Fore.GREEN + "01" + Fore.RED + "] " + Fore.WHITE + "Advanced Stealth OS Detection")
-        print(Fore.RED + "\n\t[" + Fore.GREEN + "01" + Fore.RED + "] " + Fore.WHITE + "DNS Lookup")
-        print(Fore.RED + "\n\t[" + Fore.GREEN + "08" + Fore.RED + "] " + Fore.WHITE + "Cloudflare Detection")
-        print(Fore.RED + "\n\t[" + Fore.GREEN + "03" + Fore.RED + "] " + Fore.WHITE + "Robots.txt Dumping")
-        print(Fore.RED + "\n\t[" + Fore.GREEN + "05" + Fore.RED + "] " + Fore.WHITE + "Banner Grabbing")
-        print(Fore.RED + "\n\t[" + Fore.GREEN + "04" + Fore.RED + "] " + Fore.WHITE + "IP Geolocation")
-        print(Fore.RED + "\n\t[" + Fore.GREEN + "04" + Fore.RED + "] " + Fore.WHITE + "ASN Discovery")
-        print(Fore.RED + "\n\t[" + Fore.GREEN + "04" + Fore.RED + "] " + Fore.WHITE + "URL Endpoint Discovery Crawler")
+        pass
+        #print(Fore.RED + "\n\t[" + Fore.GREEN + "BASIC RECOGNITION" + Fore.RED + "]")
+        #print(Fore.RED + "\n\t[" + Fore.GREEN + "01" + Fore.RED + "] " + Fore.WHITE + "Advanced Stealth OS Detection")
+        #print(Fore.RED + "\n\t[" + Fore.GREEN + "01" + Fore.RED + "] " + Fore.WHITE + "DNS Lookup")
+        #print(Fore.RED + "\n\t[" + Fore.GREEN + "08" + Fore.RED + "] " + Fore.WHITE + "Cloudflare Detection")
+        #print(Fore.RED + "\n\t[" + Fore.GREEN + "03" + Fore.RED + "] " + Fore.WHITE + "Robots.txt Dumping")
+        #print(Fore.RED + "\n\t[" + Fore.GREEN + "05" + Fore.RED + "] " + Fore.WHITE + "Banner Grabbing")
+        #print(Fore.RED + "\n\t[" + Fore.GREEN + "04" + Fore.RED + "] " + Fore.WHITE + "IP Geolocation")
+        #print(Fore.RED + "\n\t[" + Fore.GREEN + "04" + Fore.RED + "] " + Fore.WHITE + "ASN Discovery")
+        #print(Fore.RED + "\n\t[" + Fore.GREEN + "04" + Fore.RED + "] " + Fore.WHITE + "URL Endpoint Discovery Crawler")
 
-        print(Fore.RED + "\n\t[" + Fore.GREEN + "SCANNERS" + Fore.RED + "]")
-        print(Fore.RED + "\n\t[" + Fore.GREEN + "05" + Fore.RED + "] " + Fore.WHITE + "Phone Scanner")
-        print(Fore.RED + "\n\t[" + Fore.GREEN + "05" + Fore.RED + "] " + Fore.WHITE + "Email Scanner")
-        print(Fore.RED + "\n\t[" + Fore.GREEN + "08" + Fore.RED + "] " + Fore.WHITE + "CMS Scanner")
-        print(Fore.RED + "\n\t[" + Fore.GREEN + "08" + Fore.RED + "] " + Fore.WHITE + "Port Scanner")
-        print(Fore.RED + "\n\t[" + Fore.GREEN + "08" + Fore.RED + "] " + Fore.WHITE + "Subdomain Scanner")
+        #print(Fore.RED + "\n\t[" + Fore.GREEN + "SCANNERS" + Fore.RED + "]")
+        #print(Fore.RED + "\n\t[" + Fore.GREEN + "05" + Fore.RED + "] " + Fore.WHITE + "Phone Scanner")
+        #print(Fore.RED + "\n\t[" + Fore.GREEN + "05" + Fore.RED + "] " + Fore.WHITE + "Email Scanner")
+        #print(Fore.RED + "\n\t[" + Fore.GREEN + "08" + Fore.RED + "] " + Fore.WHITE + "CMS Scanner")
+        #print(Fore.RED + "\n\t[" + Fore.GREEN + "08" + Fore.RED + "] " + Fore.WHITE + "Port Scanner")
+        #print(Fore.RED + "\n\t[" + Fore.GREEN + "08" + Fore.RED + "] " + Fore.WHITE + "Subdomain Scanner")
 
-        print(Fore.RED + "\n\t[" + Fore.GREEN + "FUZZERS" + Fore.RED + "]")
-        print(Fore.RED + "\n\t[" + Fore.GREEN + "05" + Fore.RED + "] " + Fore.WHITE + "Subdomain Fuzzer")
-        print(Fore.RED + "\n\t[" + Fore.GREEN + "05" + Fore.RED + "] " + Fore.WHITE + "Web Path Fuzzer")
+        #print(Fore.RED + "\n\t[" + Fore.GREEN + "FUZZERS" + Fore.RED + "]")
+        #print(Fore.RED + "\n\t[" + Fore.GREEN + "05" + Fore.RED + "] " + Fore.WHITE + "Subdomain Fuzzer")
+        #print(Fore.RED + "\n\t[" + Fore.GREEN + "05" + Fore.RED + "] " + Fore.WHITE + "Web Path Fuzzer")
 
-        if choice == '1' or choice == '01':
-            detection = AdvancedStealthOSDetection(target)
-            detection.passive_ttl_method()
-            detection.active_nmap_method()
-            # detection.banner_grabbing()
-            detection.pypof_detection()
-        elif choice == '2' or choice == '02':
-            firewall_detection.detect(target)
-        else:
-            print(f"Elección no válida: {choice}")
-            sys.exit(1)
+        #if choice == '1' or choice == '01':
+        #    detection = AdvancedStealthOSDetection(target)
+        #    detection.passive_ttl_method()
+        #    detection.active_nmap_method()
+        #    # detection.banner_grabbing()
+        #    detection.pypof_detection()
+        #elif choice == '2' or choice == '02':
+        #    firewall_detection.detect(target)
+        #else:
+        #    print(f"Elección no válida: {choice}")
+        #    sys.exit(1)
 
 if __name__ == "__main__":
     main_function()
