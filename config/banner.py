@@ -1,18 +1,13 @@
 #!/bin/python3
 
 from .libraries import Fore, Style, init
-import _curses
-
-# Const
-MAINTAINER = "BlackSheep4"
-GITHUB = "https://github.com/BlackSheep4"
-
-# Vars
-version = 2.0
 
 def print_banner():
-    print(Fore.RED + r"""\n\n\t\t\tAIO Tool For """ + Fore.GREEN + r"""Information Gathering """ + Fore.RED + r"""And """ + Fore.GREEN + r"""Reconnaissance Scanner\n\t\t\t\t\t""" + Fore.RED + r"""[$] Current Version: """ +  Fore.GREEN + f"""{version}""")
-    print(Fore.RED + r"""
+    
+    version = 2.0
+
+    print(Fore.RED + "\n\n\t\t\tAIO Tool For " + Fore.GREEN + "Information Gathering " + Fore.RED + "And " + Fore.GREEN + f"Automatic Vulnerability Scanner\n\t\t\t\t\t\t\t" + Fore.RED + "[$] Current Version: " +  Fore.GREEN + f"{version}")
+    print(Fore.RED + """
                                                                                                                  
   ______             __        __                      __       __            __                                        
  /      \           |  \      |  \                    |  \  _  |  \          |  \      
@@ -28,27 +23,5 @@ def print_banner():
            \$$                                                                                                                                                                                                                            
     """)
 
-    print(f"""\n\t\t\t\t""" + Fore.GREEN + f"""\tCoded By - """ + Fore.RED + f"""{MAINTAINER}""" + Fore.GREEN + f"""\n\tFind me on GitHub: """ + Fore.RED + f"""{GITHUB}\n""" + Style.RESET_ALL)
-
-# Initialize terminal features (try to use them if available)
-try:
-    init()
-except _curses.error:
-    print("Terminal features are unavailable. Continuing without them.")
-
+    print("\n\t\t\t\t" + Fore.GREEN + "\t\t{C} Coded By - " + Fore.RED + "BlackSheep4" + Fore.GREEN + "\n\t\t\t{I} Find me in github: " + Fore.RED + "https://github.com/BlackSheep4\n" + Style.RESET_ALL)
 print_banner()
-
-def main_function():
-    try:
-        # Try to get input; provide a fallback default website if EOFError occurs
-        target = input("\n[#] Enter the website to scan (e.g: example.com) >> ")
-    except EOFError:
-        print("No input received. Exiting...")
-        target = "example.com"  # Default target
-        print(f"\nNo input provided. Using default target: {target}")
-
-    # Continue with the logic for scanning the website
-    print(f"\nScanning website: {target}")
-
-# Call the main function
-main_function()
