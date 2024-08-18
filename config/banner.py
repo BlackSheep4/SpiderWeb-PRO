@@ -1,7 +1,10 @@
 #!/bin/python3
 
 from .libraries import Fore, Style, init
-import _curses  # Needed for terminal errors
+import _curses
+import os
+
+os.environ['TERM'] = 'xterm'
 
 def print_banner():
     version = 2.0
@@ -25,19 +28,15 @@ def print_banner():
 
     print("\n\t\t\t\t" + Fore.GREEN + "\t\t{C} Coded By - " + Fore.RED + "BlackSheep4" + Fore.GREEN + "\n\t\t\t{I} Find me on github: " + Fore.RED + "https://github.com/BlackSheep4\n" + Style.RESET_ALL)
 
-# Initialize terminal features (try to use them if available)
 try:
     init()
 except _curses.error:
     print("Terminal features are unavailable. Continuing without them.")
 
-# Print the banner
 print_banner()
 
-# Define the main function
 def main_function():
-    # Placeholder for the main functionality
+    # Main function logic here
     print("Starting main function...")
 
-# Call the main function
 main_function()
