@@ -34,9 +34,3 @@ except _curses.error:
     print("Terminal features are unavailable. Continuing without them.")
 
 print_banner()
-
-def main_function():
-    # Main function logic here
-    print("Starting main function...")
-
-main_function()
