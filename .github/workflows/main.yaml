@@ -11,7 +11,8 @@ jobs:
 
     strategy:
       matrix:
-        option: ["help"] # Define all options here
+        option: ["help", "info", "scan"] # Define all options here
+        target: ["example.com", ""] # Define all targets here; use an empty string for non-scan options
 
     steps:
       - name: Checkout code
@@ -24,6 +25,6 @@ jobs:
         run: |
           docker build -t spiderweb-test .
 
-      - name: Run Docker Container with Option
+      - name: Run Docker Container with Option and Target
         run: |
-          docker run spiderweb-test python main.py ${{ matrix.option }}
+          docker run spiderweb-test python main.py ${{ matrix.option }} ${{ matrix.target }}
