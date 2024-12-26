@@ -1,6 +1,6 @@
 # SpiderWeb v2.0
 
-
+![alt text](spiderweb-logo.webp)
 
 ## Efficient and Customisable Automated Tool for Information Gathering and Web Reconnaissance 
 
@@ -14,6 +14,8 @@ Introducing a cutting-edge framework tailored for web reconnaissance and informa
 - asd
 
 ## Key Features:
+
+Unlike traditional reconnaissance tools, **this framework NOT only focuses on passive and active web-based reconnaissance but also allows advanced integrations for vulnerability scanning and post-reconnaissance analysis.** Whether you’re conducting OSINT, mapping attack surfaces, or preparing for vulnerability exploitation, this tool **provides a cohesive environment to streamline your workflow.**
 
 •  **Modularity at Its Core:** The framework operates on a plugin-based architecture, making it simple to extend functionality by integrating or customizing modules in various programming languages, such as Python, Go, Ruby, or Bash.
 
@@ -30,8 +32,6 @@ Introducing a cutting-edge framework tailored for web reconnaissance and informa
 •  **Third Party Popular Tools Integration**: It integrates a lot of third party open source tools
 
 •  **Multi purpose Tool**: OSINT, Information Gathering, Reconnaissance framework and vulnerability assessment.
-
-Unlike traditional reconnaissance tools, **this framework NOT only focuses on passive and active web-based reconnaissance but also allows advanced integrations for vulnerability scanning and post-reconnaissance analysis.** Whether you’re conducting OSINT, mapping attack surfaces, or preparing for vulnerability exploitation, this tool **provides a cohesive environment to streamline your workflow.**
 
 
 
