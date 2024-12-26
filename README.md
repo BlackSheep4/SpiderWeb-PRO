@@ -1,68 +1,89 @@
 # SpiderWeb v2.0
 
-![alt text](spiderweb-logo.webp)
+![SpiderWeb Logo](spiderweb-logo.webp)
 
-## Efficient and Customisable Automated Tool for Information Gathering and Web Reconnaissance 
+## 🕷️ Efficient and Customizable Tool for Web Reconnaissance and Information Gathering
 
-Introducing a cutting-edge framework tailored for web reconnaissance and information gathering, designed to deliver a seamless, fast, and customizable experience. This all-in-one tool bridges the gap between efficiency and modularity, enabling both beginners and seasoned professionals to collect web intelligence and identify vulnerabilities effortlessly.
+SpiderWeb v2.0 is a state-of-the-art framework for web reconnaissance and information gathering. Designed with modularity, speed, and flexibility in mind, it empowers both novice and experienced cybersecurity professionals to gather intelligence, map attack surfaces, and identify vulnerabilities with ease.
 
-## Table of contents
+---
 
-- Key features [link to bullet point]
-- asdasd
-- asd
-- asd
+## 📝 Table of Contents
 
-## Key Features:
+- [Key Features](#-key-features)
+- [Why Choose SpiderWeb?](#-why-choose-this-tool)
+- [How It Works](#-how-it-works)
+  - [Trailer Presentation](#-trailer-presentation)
+  - [Getting Started](#-how-to-use-video)
+- [Docker Deployment](#-docker-deployment)
+- [Usage](#-usage)
+- [Support the Project](#-support-the-project)
 
-Unlike traditional reconnaissance tools, **this framework NOT only focuses on passive and active web-based reconnaissance but also allows advanced integrations for vulnerability scanning and post-reconnaissance analysis.** Whether you’re conducting OSINT, mapping attack surfaces, or preparing for vulnerability exploitation, this tool **provides a cohesive environment to streamline your workflow.**
+---
 
-•  **Modularity at Its Core:** The framework operates on a plugin-based architecture, making it simple to extend functionality by integrating or customizing modules in various programming languages, such as Python, Go, Ruby, or Bash.
+## 🔑 Key Features
 
-•  **Versatile API Integration:** With support for a wide range of APIs (e.g., Shodan, VirusTotal, and Censys), users can expand their reconnaissance capabilities without hassle.
+SpiderWeb v2.0 stands out from traditional reconnaissance tools with its advanced features and integrations, offering a complete solution for web-based reconnaissance and beyond:
 
-•  **Seamless Tool Interoperability:** Easily integrates with popular tools like Nmap, WFuzz, and Metasploit, allowing for smooth transitions between reconnaissance, exploitation, and scanning tasks.
+- **Modular Architecture**: Plugin-based design allows seamless integration and customization with modules in Python, Go, Ruby, or Bash.
+- **API Support**: Effortlessly extend your reconnaissance capabilities with APIs like Shodan, VirusTotal, and Censys.
+- **Third-Party Tool Integration**: Compatible with popular tools like Nmap, WFuzz, and Metasploit to enhance your workflow.
+- **User-Friendly Interface**: Choose between a web-based GUI for real-time interaction or a robust CLI for flexibility.
+- **Easy Deployment**: Run SpiderWeb in production as a container (e.g., on EC2 instances) or locally for testing, leveraging containerization for maximum portability.
+- **Python-Centric Framework**: Build and integrate custom Python scripts easily to suit your specific needs.
+- **Multi-Purpose Utility**: From OSINT and reconnaissance to vulnerability assessment, SpiderWeb adapts to a variety of cybersecurity tasks.
+- **Built-In Automation and Scheduling**: Manage large datasets and repetitive tasks with ease, enhancing scalability.
 
-•  **User-Friendly Interface (CLI / GUI Interface):** Offers a modern, web-based GUI, delivering a real-time interactive experience while maintaining command-line flexibility.
+---
 
-•  **Easy Deployment**: Can be deployed as container in production environments as EC2 instantes or in local environments for test purposes. Anyway, will work thanks to containeratization.
- 
-•  **Full Modular Framework:** Create and innovate your own SpiderWeb thanks to the modular framework created based on Python. This tools facilitates the creation of customised Python scripts that can be easily integrated.
+## 🎯 Why Choose This Tool?
 
-•  **Third Party Popular Tools Integration**: It integrates a lot of third party open source tools
+- **Streamlined Intelligence Gathering**: Lightweight and fast architecture designed for efficient target mapping.
+- **Customizable & Plugin-Friendly**: Easily extend or adapt functionality without requiring deep development skills.
+- **Scalability for Professionals**: Handle large-scale reconnaissance tasks with built-in automation tools.
+- **Future-Ready Design**: Stay ahead in cybersecurity with a tool built to meet evolving challenges.
 
-•  **Multi purpose Tool**: OSINT, Information Gathering, Reconnaissance framework and vulnerability assessment.
+---
 
+## ❓ How It Works
 
+### 🎬 Trailer Presentation
 
-## Why Choose This Tool?
+[Embed video here]
 
-•  If you want to **gather intelligence and map targets**, this tool excels with its modular, lightweight, and fast architecture.
+### 🧑‍🏫 Getting Started
 
-•  Looking to customize or extend functionality? Its **plugin-friendly** design ensures that even non-developers can adapt it to their needs.
+[Embed tutorial video here]
 
-•  Need to scale your reconnaissance tasks? **Built-in automation and scheduling** make handling large datasets a breeze.
+---
 
-Start your journey with this powerful framework and elevate your reconnaissance and vulnerability scanning efforts. **Stay ahead in the game with a tool designed for the future of cybersecurity**.
+## 🐳 Docker Deployment
 
-## How it works?
+Deploy SpiderWeb effortlessly with Docker:
 
-[VIDEO HERE]
+```bash
+docker run --rm -dit blacksheep4/spiderwebv2 --run
+```
 
-## Docker
+---
 
-    docker run --rm -dit blacksheep4/spiderwebv2 --run
+## ❓ Usage
 
-## Usage
+Launch the framework and start using modules for your tasks:
 
-    [spiderweb][framework][module] >> 
+```plaintext
+[spiderweb][framework][module] >>
+```
 
-## Buy me a coffe
+---
 
-SpiderWeb is free software. However, large amounts of time and effort go into its continued development. If you are interested in maintain the software, please consider a donation:
+## ☕ Support the Project
 
-- Paypal
-- Bitcoin
-- Ethereum
+SpiderWeb is free software, but its development requires significant time and effort. If you find this tool valuable, please consider supporting its continued growth:
 
-Thank you.
+- **PayPal**: [Insert link here]
+- **Bitcoin**: [Insert wallet address here]
+- **Ethereum**: [Insert wallet address here]
+
+Thank you for helping us improve and maintain SpiderWeb!
+
