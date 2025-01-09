@@ -3,10 +3,11 @@ from sqlalchemy.orm import Session
 from backend.app.db.database import get_db
 from backend.app.db.models.user import User as UserModel
 from backend.app.schemas.user import UserCreate, UserRead
+from backend.app.utils.security import hash_password
 
 app = FastAPI()
 
-@app.post("/users/")
+@app.post("/users/", response_model=UserRead)
 def create_user(user: UserCreate, db: Session = Depends(get_db)):
     """
     Create a user in the database
@@ -17,8 +18,11 @@ def create_user(user: UserCreate, db: Session = Depends(get_db)):
     if db_user:
         raise HTTPException(status_code=400, detail="Email already registered")
     
-    # Crear un nuevo usuario
-    new_user = UserModel(name=user.name, email=user.email, hashed_password=user.hashed_password)
+    # Hashear la contraseña antes de guardarla
+    hashed_password = hash_password(user.hashed_password)
+    # Crear un nuevo usuario con la contraseña ya hasheada
+    new_user = UserModel(name=user.name, email=user.email, hashed_password=hashed_password)
+    
     db.add(new_user)
     db.commit()
     db.refresh(new_user)
@@ -50,8 +54,15 @@ def update_user(user_id: int, user: UserCreate, db: Session = Depends(get_db)):
     Update a user in the database
     """
     db_user = db.query(UserModel).filter(UserModel.id == user_id).first()
-    if db_user is None:
+    if not db_user:
         raise HTTPException(status_code=404, detail="User not found")
+    
+    # Verificar si el nuevo email ya está en uso por otro usuario
+    existing_user = db.query(UserModel).filter(UserModel.email == user.email, UserModel.id != user.id).first()
+
+    if existing_user:
+        raise HTTPException(status_code=400, detail="Email already registered")
+    
     for key, value in user.dict().items():
         setattr(db_user, key, value)
     db.commit()
